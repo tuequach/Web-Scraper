@@ -35,3 +35,28 @@ app.get('/scape', function (req, res) {
             .children('a')
             .attr('href');
 
+    db.Article.create(result)
+        .then(function(dbArticle) {
+            console.log(dbArticle);
+        })
+        .catch(function(err) {
+            res.json(err);
+        });
+    });
+
+    res.send("Scraping Complete!");
+    });
+});
+
+    app.get("/articles", function(req,res) {
+        db.Article.find({})
+        .then(function(dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function(err) {
+            res.json(err);
+    });
+});
+
+
+
