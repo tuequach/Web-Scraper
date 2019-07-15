@@ -20,7 +20,7 @@ mongoose.connect("mongob://localhost/unit18Populater", {useNewUrlParser: true })
 //routes for scraping website 
 
 app.get('/scape', function (req, res) {
-    axios.get("https://na.leagueoflegends.com/en/game-info/").then(function(response) {
+    axios.get("https://www.gamasutra.com/").then(function(response) {
 
     var $ = cheerio.load(response.data);
 
